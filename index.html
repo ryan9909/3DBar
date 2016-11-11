@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>no title</title>
+<!--[if IE]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]-->
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="2D.js"></script>
+<script>
+	window.onload=function(){
+		var obj=document.getElementById("cs");
+		var data = [];
+		var Option ={
+			titleOption : {
+				height : 40,
+				show : true,
+				text : "Three-dimensional histogram",
+				style :{
+					"font-size" : "20px",
+					"font-family" : "Arial",			
+					"font-weight" : "bold",
+					"line-height" : "50px"
+				}
+			},			
+			/* X-axis font parameters */
+			XOption : {
+				show : true,
+				style : {
+					"font-size" : "12px",
+					"font-family" : "Arial",
+					"text-align" : "center"
+				},
+				unitShow : false,
+				unitText : null
+			},
+			/* The parameters of the histogram hint */
+			Cue : {
+				show : true,
+				style : {
+					"font-size" : "12px",
+					"font-family" : "Arial",
+					"text-align" : "center"					
+				}
+			},
+			/* Y-axis tick line of the parameters */
+			YOption : {
+				show : true,
+				style : {
+					"font-size" : "12px",
+					"font-family" : "Arial",
+					"text-align" : "right",
+					"width" : 35	
+				},
+				unitShow : true,
+				unitText : "Number of articles"
+			},		
+			GraphOption : {	
+				Line : {
+					show : true,
+					color : "black"
+				},
+				XGrap : {
+					"StartOrBackColor" : "#64a899",
+					"Gradient" : true,
+					"EndColor" : "#badeba"
+				},
+				YGrap : {
+					"StartOrBackColor" : "white"
+				},
+				BackGrap : {
+					"StartOrBackColor" : "#a8dede",
+					"Gradient" : true,
+					"EndColor" : "#fafcf9"
+				},	
+				BackGroud : {
+					show : true,
+					"backGroundColor" : "#a5d2b5",
+					"backImgPath" : null
+				}	
+			},
+			PillarParams : {
+				YGradient : 0 ,
+				FacadeStyle :{ 
+					"StartColor" : "#54c59a",
+					"Gradient" : true,
+					"EndColor" : "#43b38b"
+ 				},
+				TopStyle : { 
+					"StartColor" : "#43b38b",
+					"Gradient" : false,
+					"EndColor" : "red"
+ 				},
+				ProfileStyle : { 
+					"StartColor" : "#54c59a",
+					"Gradient" : true,
+					"EndColor" : "#43b38b"
+ 				}
+			}
+		};
+		data.push(["163m",500]);
+		data.push(["sina",5000]);
+		data.push(["people",4000]);
+		data.push(["xinhuanet",732]);		
+		data.push(["dangdang",400]);		
+		data.push(["any",400]);
+		data.push(["any",300]);
+		data.push(["any",800]);
+		data.push(["any",400]);		
+		data.push(["any",400]);
+		data.push(["any",300]);
+		data.push(["any",800]);
+		data.push(["any",400]);
+		var Map = new LineMap(obj,data,Option);	
+		Map.init();
+	};		
+</script>
+</head>
+
+<body>
+<div style="margin:150 250; width:800px; height:470px; ">
+<canvas id="cs" width="800"  height="420"></canvas>
+</div>
+</body>
+</html>
